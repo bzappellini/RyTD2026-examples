@@ -1,6 +1,7 @@
 import socket  # Biblioteca estándar para trabajar con sockets de red.
+import os  # Biblioteca para leer configuración desde variables de entorno.
 
-HOST = "0.0.0.0"  # Escucha en todas las interfaces de red de la máquina.
+HOST = os.environ.get("SERVER_BIND_HOST", "127.0.0.1")  # Host local de escucha (localhost por defecto; configurable para Docker).
 PORT = 9000  # Puerto UDP donde este proceso quedará esperando datagramas.
 
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:  # Crea un socket IPv4 (AF_INET) de tipo UDP (SOCK_DGRAM).

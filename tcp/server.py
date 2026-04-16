@@ -1,6 +1,7 @@
 import socket  # Biblioteca estándar para programación de sockets.
+import os  # Biblioteca para leer configuración desde variables de entorno.
 
-HOST = "0.0.0.0"  # Escucha en todas las interfaces disponibles de la máquina.
+HOST = os.environ.get("SERVER_BIND_HOST", "127.0.0.1")  # Host local de escucha (localhost por defecto; configurable para Docker).
 PORT = 9000  # Puerto TCP en el que el servidor aceptará conexiones.
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:  # Crea un socket IPv4 orientado a conexión (TCP).

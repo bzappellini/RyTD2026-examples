@@ -147,6 +147,7 @@ docker run --rm -it -e SERVER_HOST=<nombre-o-ip-del-servidor> tcp-client
 
 - `SERVER_HOST`: host o IP del servidor (default: `localhost`).
 - `SERVER_PORT`: puerto del servidor (default: `9000`).
+- `SERVER_BIND_HOST`: host local donde escucha el servidor (default local seguro: `127.0.0.1`; en Docker se configura `0.0.0.0`).
 
 Ejemplo local (cliente TCP apuntando a otra IP):
 
