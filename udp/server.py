@@ -1,6 +1,6 @@
 import socket
 
-HOST = "0.0.0.0"
+HOST = "0.0.0.0"  # Escucha en todas las interfaces (necesario en Docker)
 PORT = 9000
 
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
